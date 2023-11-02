@@ -1,5 +1,6 @@
 export const schema = `#graphql
   type Plan {
+    id: String
     name: String
     initPrice: Int
     dateRange: [String]
@@ -7,6 +8,7 @@ export const schema = `#graphql
   }
 
   type Movement {
+    id: String 
     date: String
     amount: Int
     description: String

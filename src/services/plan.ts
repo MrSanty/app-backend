@@ -36,9 +36,13 @@ export const getMovementsByPlan = async (id: string) => {
   }
 }
 
-export const addPlan = async (plan: PlanDataInput) => {
+export const addPlan = async (input: PlanDataInput) => {
   try {
-    const newPlan = new PlanSchema(plan);
+    const newPlan = new PlanSchema({
+      name: input.name,
+      initPrice: input.initPrice,
+      dateRange: [new Date(input.dateRange[0]), new Date(input.dateRange[1])],
+    });
     newPlan.finalPrice = newPlan.initPrice;
     return await newPlan.save();
   } catch (error: any) {

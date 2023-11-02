@@ -1,7 +1,7 @@
 export interface PlanDataInput {
   name: String!;
   initPrice: Number!;
-  dateRange: [Date!]!;
+  dateRange: Date[]!;
 }
 
 export interface MovementInput {

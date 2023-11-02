@@ -7,11 +7,11 @@ export const resolvers = {
     getMovementsByPlan: (_, { id }) => getMovementsByPlan(id)
   },
   Mutation: {
-    addPlan: (_, { plan }) => addPlan(plan),
-    updatePlan: (_, { id, plan }) => updatePlan(id, plan),
+    addPlan: (_, { input }) => addPlan(input),
+    updatePlan: (_, { id, input }) => updatePlan(id, input),
     deletePlan: (_, { id }) => deletePlan(id),
-    addMovement: (_, { id, movement }) => addMovement(id, movement),
-    updateMovement: (_, { id, movement }) => updateMovement(id, movement),
+    addMovement: (_, { id, input }) => addMovement(id, input),
+    updateMovement: (_, { id, input }) => updateMovement(id, input),
     deleteMovement: (_, { id }) => deleteMovement(id)
   }
 };
